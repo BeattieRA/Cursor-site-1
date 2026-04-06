@@ -4,14 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Question 2 · Should you hire Richard? | meetrb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="translation" data-question-index="2" data-question-total="5" data-next="q3.html" data-prev="q1.html">
     <header class="site-header">
       <div class="header-inner">
         <div class="brand-lockup">
-          <span class="brand-pill">meetrb</span>
-          <span class="brand-tagline">digital transformation, done properly</span>
+          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
+          <span class="brand-tagline">Product &amp; UX Leadership</span>
         </div>
         <a href="index.html" class="header-cta">Back to overview</a>
       </div>
@@ -23,7 +29,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 2 of 5</p>
             <h1 id="quiz-question">
-              Do you need someone who can talk equally well to executives and engineers?
+              Do you need someone who can speak to executives one moment and deep-dive into UX, engineering and product strategy the next?
             </h1>
           </header>
 
@@ -36,11 +42,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="yes" />
                   <div>
-                    <div class="quiz-option-label">
-                      Yes, we need a translator between strategy and delivery.
-                    </div>
+                    <div class="quiz-option-label">Yes, we need a bridge builder, not a silo.</div>
                     <div class="quiz-option-help">
-                      Board-level slides one moment, API details the next.
+                      Turn ambiguity into strategic clarity and cross-functional alignment.
                     </div>
                   </div>
                 </label>
@@ -48,11 +52,10 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="maybe" />
                   <div>
-                    <div class="quiz-option-label">
-                      Some of that would be useful.
-                    </div>
+                    <div class="quiz-option-label">Some of that would be useful.</div>
                     <div class="quiz-option-help">
-                      You value people who can move between rooms without losing the plot.
+                      You value people who can cross squads without losing the customer or the
+                      regulation story.
                     </div>
                   </div>
                 </label>
@@ -60,11 +63,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="no" />
                   <div>
-                    <div class="quiz-option-label">
-                      No, our stakeholders are already tightly aligned.
-                    </div>
+                    <div class="quiz-option-label">No, our stakeholders are already aligned.</div>
                     <div class="quiz-option-help">
-                      Lucky you. Richard can still help pressure‑test that alignment.
+                      Lucky you. Richard can help deepen that alignment and keep the momentum going.
                     </div>
                   </div>
                 </label>
@@ -73,22 +74,27 @@
           </form>
 
           <footer class="quiz-footer">
-            <button id="btn-prev" class="btn btn-ghost" type="button">
-              Back
-            </button>
+            <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">
-              Next
-            </button>
+            <button id="btn-next" class="btn btn-primary" type="button">Next</button>
           </footer>
+
+          <section class="fun-fact" aria-labelledby="fun-fact-heading-q2">
+            <h2 id="fun-fact-heading-q2" class="fun-fact-heading">Fun Richard Fact</h2>
+            <p class="fun-fact-body">
+              At BMO, Richard led cross-team initiatives like launching the &apos;Balanced Score
+              Card&apos; to drive customer-centric roadmap items at the team level and deliver meaningful insights to
+              executives. He has spent most of his career leading workshops, translating executive strategy to actionable roadmaps, and being locked in small rooms full of engineers and whiteboards.
+            </p>
+          </section>
         </div>
       </section>
 
       <section class="footnote">
         <p>
-          This quiz is biased. It&apos;s designed for teams who are serious about digital
-          transformation, not just new buzzwords. If that sounds like you, the answer is almost
-          certainly <strong>yes</strong>.
+          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
+          experiences at speed and scale. If that sounds like you, the answer is almost certainly
+          <strong>yes</strong>.
         </p>
       </section>
     </main>
@@ -96,4 +102,3 @@
     <script src="app.js" defer></script>
   </body>
 </html>
-

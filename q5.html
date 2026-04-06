@@ -4,14 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Question 5 · Should you hire Richard? | meetrb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="culture" data-question-index="5" data-question-total="5" data-next="result.html" data-prev="q4.html">
     <header class="site-header">
       <div class="header-inner">
         <div class="brand-lockup">
-          <span class="brand-pill">meetrb</span>
-          <span class="brand-tagline">digital transformation, done properly</span>
+          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
+          <span class="brand-tagline">Product &amp; UX Leadership</span>
         </div>
         <a href="index.html" class="header-cta">Back to overview</a>
       </div>
@@ -23,7 +29,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 5 of 5</p>
             <h1 id="quiz-question">
-              Are you open to honest feedback about your operating model and ways of working?
+              Do you need someone who can build large, cross-functional teams with a high-performing culture?
             </h1>
           </header>
 
@@ -37,10 +43,11 @@
                   <input type="radio" name="answer" value="yes" />
                   <div>
                     <div class="quiz-option-label">
-                      Yes, we want a thought partner, not a yes‑person.
+                      Yes, scaling teams and hybrid culture are on the critical path.
                     </div>
                     <div class="quiz-option-help">
-                      You’re ready for clear, kind, evidence‑backed challenge.
+                      You need leadership that connects product, design, and engineering with shared
+                      rituals and standards.
                     </div>
                   </div>
                 </label>
@@ -48,11 +55,10 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="maybe" />
                   <div>
-                    <div class="quiz-option-label">
-                      Within reason, yes.
-                    </div>
+                    <div class="quiz-option-label">Somewhat—we&apos;re growing into that challenge.</div>
                     <div class="quiz-option-help">
-                      You want someone who respects context but won’t sugarcoat reality.
+                      Ways of working are shifting; you want help making collaboration stick across
+                      locations.
                     </div>
                   </div>
                 </label>
@@ -60,11 +66,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="no" />
                   <div>
-                    <div class="quiz-option-label">
-                      Not really, we mostly want validation.
-                    </div>
+                    <div class="quiz-option-label">Not really, our org design is already settled.</div>
                     <div class="quiz-option-help">
-                      This quiz is already telling you something.
+                      Sounds like the hard work is already done, but keeping that momentum going is key.
                     </div>
                   </div>
                 </label>
@@ -73,22 +77,28 @@
           </form>
 
           <footer class="quiz-footer">
-            <button id="btn-prev" class="btn btn-ghost" type="button">
-              Back
-            </button>
+            <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">
-              See your result
-            </button>
+            <button id="btn-next" class="btn btn-primary" type="button">See your result</button>
           </footer>
+
+          <section class="fun-fact" aria-labelledby="fun-fact-heading-q5">
+            <h2 id="fun-fact-heading-q5" class="fun-fact-heading">Fun Richard Fact</h2>
+            <p class="fun-fact-body">
+              Richard has built and led large cross-functional hybrid teams of designers, writers,
+              engineers and accessibility specialists. He has managed Senior Dev Managers, Product
+              Owners, Senior Design Managers, and Individual Contributors. His key to success has always
+              been &quot;hard on problems, soft on people&quot;.
+            </p>
+          </section>
         </div>
       </section>
 
       <section class="footnote">
         <p>
-          This quiz is biased. It&apos;s designed for teams who are serious about digital
-          transformation, not just new buzzwords. If that sounds like you, the answer is almost
-          certainly <strong>yes</strong>.
+          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
+          experiences at speed and scale. If that sounds like you, the answer is almost certainly
+          <strong>yes</strong>.
         </p>
       </section>
     </main>
@@ -96,4 +106,3 @@
     <script src="app.js" defer></script>
   </body>
 </html>
-

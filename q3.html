@@ -4,14 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Question 3 · Should you hire Richard? | meetrb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="outcomes" data-question-index="3" data-question-total="5" data-next="q4.html" data-prev="q2.html">
     <header class="site-header">
       <div class="header-inner">
         <div class="brand-lockup">
-          <span class="brand-pill">meetrb</span>
-          <span class="brand-tagline">digital transformation, done properly</span>
+          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
+          <span class="brand-tagline">Product &amp; UX Leadership</span>
         </div>
         <a href="index.html" class="header-cta">Back to overview</a>
       </div>
@@ -23,7 +29,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 3 of 5</p>
             <h1 id="quiz-question">
-              Are you trying to move from strategy decks to shipped products and services?
+              Do you need someone who takes end-to-end ownership of product outcomes in a high-growth environment where velocity, trust and user experience are all critical?
             </h1>
           </header>
 
@@ -36,11 +42,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="yes" />
                   <div>
-                    <div class="quiz-option-label">
-                      Yes, we’re tired of slideware.
-                    </div>
+                    <div class="quiz-option-label">Yes, we need true end-to-end ownership.</div>
                     <div class="quiz-option-help">
-                      You want roadmaps that actually reach production.
+                      From understanding the user needs to shipping products to measuring impact.
                     </div>
                   </div>
                 </label>
@@ -48,11 +52,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="maybe" />
                   <div>
-                    <div class="quiz-option-label">
-                      We’re somewhere in the middle.
-                    </div>
+                    <div class="quiz-option-label">Partly, we want stronger ownership, but we're still maturing.</div>
                     <div class="quiz-option-help">
-                      There’s momentum, but you could use sharper execution.
+                      You&apos;re moving from project mode toward true product ownership.
                     </div>
                   </div>
                 </label>
@@ -60,11 +62,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="no" />
                   <div>
-                    <div class="quiz-option-label">
-                      No, we mostly need advice and frameworks.
-                    </div>
+                    <div class="quiz-option-label">Not really, we need someone who can just execute.</div>
                     <div class="quiz-option-help">
-                      Richard is happiest when advice leads to working software.
+                      Richard will add the most value when ownership and accountability are part of the role.
                     </div>
                   </div>
                 </label>
@@ -73,22 +73,27 @@
           </form>
 
           <footer class="quiz-footer">
-            <button id="btn-prev" class="btn btn-ghost" type="button">
-              Back
-            </button>
+            <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">
-              Next
-            </button>
+            <button id="btn-next" class="btn btn-primary" type="button">Next</button>
           </footer>
+
+          <section class="fun-fact" aria-labelledby="fun-fact-heading-q3">
+            <h2 id="fun-fact-heading-q3" class="fun-fact-heading">Fun Richard Fact</h2>
+            <p class="fun-fact-body">
+              As Director in Digital Transformation at BMO, Richard led the design system platform,
+              building an &apos;inner-source&apos;, AI-ready, design and code repo leveraged by teams
+              across the bank. The design system reduced the amount of time spent on design and development by over 60%, enabling us to deliver great user experiences at speed and scale.
+            </p>
+          </section>
         </div>
       </section>
 
       <section class="footnote">
         <p>
-          This quiz is biased. It&apos;s designed for teams who are serious about digital
-          transformation, not just new buzzwords. If that sounds like you, the answer is almost
-          certainly <strong>yes</strong>.
+          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
+          experiences at speed and scale. If that sounds like you, the answer is almost certainly
+          <strong>yes</strong>.
         </p>
       </section>
     </main>
@@ -96,4 +101,3 @@
     <script src="app.js" defer></script>
   </body>
 </html>
-

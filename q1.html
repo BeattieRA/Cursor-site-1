@@ -4,14 +4,20 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Question 1 · Should you hire Richard? | meetrb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="experience" data-question-index="1" data-question-total="5" data-next="q2.html" data-prev="index.html">
     <header class="site-header">
       <div class="header-inner">
         <div class="brand-lockup">
-          <span class="brand-pill">meetrb</span>
-          <span class="brand-tagline">digital transformation, done properly</span>
+          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
+          <span class="brand-tagline">Product &amp; UX Leadership</span>
         </div>
         <a href="index.html" class="header-cta">Back to overview</a>
       </div>
@@ -23,7 +29,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 1 of 5</p>
             <h1 id="quiz-question">
-              Are you looking for someone with 10+ years of experience in digital transformation?
+              Are you looking for someone with 10 years' experience in product and UX leadership?
             </h1>
           </header>
 
@@ -36,11 +42,10 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="yes" />
                   <div>
-                    <div class="quiz-option-label">
-                      Yes, we need that level of experience.
-                    </div>
+                    <div class="quiz-option-label">Yes, we need that depth.</div>
                     <div class="quiz-option-help">
-                      You want someone who has seen a few waves of change and shipped through them.
+                      You want someone who has shipped through regulation, growth spurts, and a few
+                      platform pivots—not just owned a backlog.
                     </div>
                   </div>
                 </label>
@@ -48,11 +53,10 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="maybe" />
                   <div>
-                    <div class="quiz-option-label">
-                      It depends, but senior is helpful.
-                    </div>
+                    <div class="quiz-option-label">It depends, but senior is helpful.</div>
                     <div class="quiz-option-help">
-                      You’re open as long as they can land outcomes, not just decks.
+                      You&apos;re open as long as they can land customer and business outcomes, not
+                      only decks.
                     </div>
                   </div>
                 </label>
@@ -60,11 +64,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="no" />
                   <div>
-                    <div class="quiz-option-label">
-                      Not really, we just want a quick website.
-                    </div>
+                    <div class="quiz-option-label">Not really—we need a narrower scope.</div>
                     <div class="quiz-option-help">
-                      You may be looking for something narrower than end‑to‑end transformation.
+                      You may be after a tactical hire rather than end-to-end product leadership.
                     </div>
                   </div>
                 </label>
@@ -73,22 +75,28 @@
           </form>
 
           <footer class="quiz-footer">
-            <button id="btn-prev" class="btn btn-ghost" type="button">
-              Back
-            </button>
+            <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">
-              Next
-            </button>
+            <button id="btn-next" class="btn btn-primary" type="button">Next</button>
           </footer>
+
+          <section class="fun-fact" aria-labelledby="fun-fact-heading-q1">
+            <h2 id="fun-fact-heading-q1" class="fun-fact-heading">Fun Richard Fact</h2>
+            <p class="fun-fact-body">
+              Ten years ago, Richard cut his teeth at a scrappy currency-exchange company (with a start-up attitude) doing all
+              things digital: digital marketing, social media, SEO, reporting analytics, front-end coding, and even launched what we called
+              &quot;Netflix for currency&quot; (online currency ordering). We even started building an all-in-one currency card. He grew digital sales
+              from 0 to 20% of revenue.
+            </p>
+          </section>
         </div>
       </section>
 
       <section class="footnote">
         <p>
-          This quiz is biased. It&apos;s designed for teams who are serious about digital
-          transformation, not just new buzzwords. If that sounds like you, the answer is almost
-          certainly <strong>yes</strong>.
+          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
+          experiences at speed and scale. If that sounds like you, the answer is almost certainly
+          <strong>yes</strong>.
         </p>
       </section>
     </main>
@@ -96,4 +104,3 @@
     <script src="app.js" defer></script>
   </body>
 </html>
-

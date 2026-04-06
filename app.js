@@ -1,4 +1,4 @@
-const STORAGE_KEY = "meetrb_quiz_answers_v1";
+const STORAGE_KEY = "meetrb_quiz_answers_v3";
 const QUESTION_SEQUENCE = ["experience", "translation", "outcomes", "complexity", "culture"];
 
 function readAnswers() {
@@ -138,39 +138,39 @@ function initResultPage() {
 
   if (strongAlignment >= 3) {
     lines.push(
-      "From your answers, it looks like you’re serious about real digital transformation, not another theatre project.",
+      "From your answers, it looks like you’re serious about shipping real products with great UX... not just slide decks.",
     );
   } else if (strongAlignment >= 1 || gentleAlignment >= 2) {
     lines.push(
-      "You’re on the hook for real change and you know it – you just need the right partner to keep things honest and moving.",
+      "You’re on the hook for real product and platform change, and you know it. You need a partner who can help manage change while velocity stays high.",
     );
   } else {
     lines.push(
-      "Even if you’re just exploring, it helps to have someone who has been through the messy parts of transformation before.",
+      "Even if you’re just exploring, it helps to have someone who has been through messy launches, regulation, and scale before.",
     );
   }
 
   if (answers.outcomes === "yes") {
     lines.push(
-      "You’re explicitly trying to get from slideware to shipped products. That is exactly where Richard is most useful.",
+      "You want end-to-end ownership of product outcomes in a high-growth context. That is exactly where Richard is most useful.",
     );
   }
 
   if (answers.translation === "yes" || answers.translation === "maybe") {
     lines.push(
-      "You value people who can move between executives and engineers without losing the plot. Richard lives in that gap.",
+      "You value people who can move between leadership, product, and engineering without losing the customer or the compliance story.",
     );
   }
 
   if (answers.culture === "yes") {
     lines.push(
-      "You’re open to clear, kind challenge on your operating model – the thing most organisations avoid until it’s too late.",
+      "You’re serious about building cross-functional teams and a culture that performs in hybrid work—not leaving trust and pace to chance.",
     );
   }
 
   lines.push(
     "Putting that together, the answer is clear:",
-    "Yes, you should hire Richard. The only real question is whether you want him helping on your thorniest problems or your most ambitious bets.",
+    "Yes, you should hire Richard. The only real question is when you want him to start! Reach out to chat about how he can add value to your team.",
   );
 
   resultBody.innerHTML = "";
@@ -180,11 +180,30 @@ function initResultPage() {
   pill.textContent = "biased but honest";
   resultBody.appendChild(pill);
 
-  lines.forEach((text) => {
+  const leadLines = lines.slice(0, -2);
+  const verdictPair = lines.slice(-2);
+
+  leadLines.forEach((text) => {
     const p = document.createElement("p");
+    p.className = "result-text";
     p.textContent = text;
     resultBody.appendChild(p);
   });
+
+  const callout = document.createElement("div");
+  callout.className = "result-callout";
+
+  const intro = document.createElement("p");
+  intro.className = "result-callout-intro";
+  intro.textContent = verdictPair[0];
+
+  const verdict = document.createElement("p");
+  verdict.className = "result-callout-verdict";
+  verdict.textContent = verdictPair[1];
+
+  callout.appendChild(intro);
+  callout.appendChild(verdict);
+  resultBody.appendChild(callout);
 }
 
 function init() {

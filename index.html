@@ -11,51 +11,180 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Russo+One&family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var key = "meetrb_ui_theme_v1";
+          var valid = { neo: 1, liquid: 1, win98: 1, propaganda: 1, bloomberg: 1, modern: 1 };
+          var t = window.localStorage.getItem(key);
+          document.documentElement.dataset.uiTheme = valid[t] ? t : "modern";
+        } catch (e) {
+          document.documentElement.dataset.uiTheme = "modern";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <div class="brand-lockup">
-          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
-          <span class="brand-tagline">Product &amp; UX Leadership</span>
+        <div class="header-actions">
+          <a href="q1.html" class="header-cta">Start the quiz</a>
+          <a href="cv.html" class="header-cta">View CV</a>
+          <a href="https://www.linkedin.com/in/beattiera/" class="header-cta" target="_blank" rel="noreferrer">LinkedIn</a>
+          <details class="portfolio-dropdown">
+            <summary class="brand-pill">Portfolio</summary>
+            <div class="portfolio-dropdown-menu" role="menu" aria-label="Portfolio projects">
+              <a class="portfolio-dropdown-item" href="https://www.meetrb.com/secure-offers" target="_blank" rel="noopener noreferrer">Secure Offers</a>
+              <a class="portfolio-dropdown-item" href="https://www.meetrb.com/experience-health-check" target="_blank" rel="noopener noreferrer">Experience Health Checks</a>
+              <a class="portfolio-dropdown-item" href="https://www.meetrb.com/pre-arrival-bank-account-application-for-newcomers" target="_blank" rel="noopener noreferrer">Pre-Arrival Newcomers</a>
+              <a class="portfolio-dropdown-item" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">View full portfolio</a>
+            </div>
+          </details>
+          <div class="theme-dropdown">
+            <button type="button" class="header-cta theme-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Choose your theme</button>
+            <div class="theme-dropdown-menu" role="menu" aria-label="Select UI theme from menu">
+              <button type="button" class="theme-dropdown-item" data-theme-option="neo">Neobrutalist</button>
+              <button type="button" class="theme-dropdown-item" data-theme-option="liquid">Glassmorphism</button>
+              <button type="button" class="theme-dropdown-item" data-theme-option="win98">Windows 98</button>
+              <button type="button" class="theme-dropdown-item" data-theme-option="propaganda">Propaganda</button>
+              <button type="button" class="theme-dropdown-item" data-theme-option="bloomberg">Bloomberg</button>
+              <button type="button" class="theme-dropdown-item" data-theme-option="modern">Modern</button>
+            </div>
+          </div>
         </div>
-        <a href="q1.html" class="header-cta">Start the quiz</a>
       </div>
     </header>
 
     <main class="page">
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-copy">
-          <h1 id="hero-heading">Should you hire Richard?</h1>
-          <p class="hero-subtitle">
-            A short (biased) questionnaire for teams like yours: fintechs,
-            start-ups, tech companies and banks dedicated to delivering great customer experiences at speed and scale.
-          </p>
-          <p class="hero-cta-row">
-            <a href="q1.html" class="btn btn-primary"> Let&apos;s find out </a>
-            <a
-              class="hero-linkedin"
-              href="https://www.linkedin.com/in/beattiera/"
-              target="_blank"
-              rel="noreferrer"
-              >Get in touch on LinkedIn</a
-            >
-          </p>
+      <section class="ui-mode-callout" aria-label="UI theme selector">
+        <p class="ui-mode-copy">Choose your theme</p>
+                        <div class="ui-mode-toggle" role="group" aria-label="Select UI theme">
+          <button type="button" class="ui-mode-btn" data-theme-option="neo" aria-pressed="false">Neobrutalism</button>
+          <button type="button" class="ui-mode-btn" data-theme-option="liquid" aria-pressed="false">Glassmorphism</button>
+          <button type="button" class="ui-mode-btn" data-theme-option="win98" aria-pressed="false">Windows 98</button>
+          <button type="button" class="ui-mode-btn" data-theme-option="propaganda" aria-pressed="false">Propaganda</button>
+          <button type="button" class="ui-mode-btn" data-theme-option="bloomberg" aria-pressed="false">Bloomberg</button>
+          <button type="button" class="ui-mode-btn" data-theme-option="modern" aria-pressed="false">Modern</button>
         </div>
+      </section>
 
-        <div class="hero-aside">
-          <div class="hero-stats-block">
-            <h2 class="stats-heading">What Richard actually does</h2>
-            <ul class="stats-list">
-              <li>10 years in digital leadership and delivery</li>
-              <li>Bridges product strategy, great user experience, and engineering excellence</li>
-              <li>Turns ambiguity into strategic clarity and meaningful impact</li>
-            </ul>
+      <section class="intro-card" aria-label="Richard introduction">
+        <h2 class="intro-card-heading">
+          Hi, I&apos;m <span id="rotating-role" class="rotating-role">Richard</span>
+        </h2>
+        <p class="intro-card-body">
+          Welcome to my portfolio/vibe coding playground. I use Cursor, Claude, Figma and other AI tools to build cool things.
+        </p>
+        <p class="intro-card-body">
+          I&apos;ve spent the last 10+ years in fintech leading digital teams, turning complexity into clarity and delivering great user experiences. Completing my MBA at Oxford where I focus on the intersection of strategy, finance, and technology.
+        </p>
+        <p class="intro-card-body">If you also like to build cool things, let&apos;s connect.</p>
+      </section>
+
+      <section class="hero-video-stage" aria-label="Hero background video stage">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata">
+          <source src="assets/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <h1 id="hero-heading">Should you hire Richard?</h1>
+            <p class="hero-subtitle">
+              A short (biased) quiz for teams like yours: fintechs,
+              start-ups, tech companies and banks dedicated to delivering great customer experiences at speed and scale.
+            </p>
+            <p class="hero-cta-row">
+              <a href="q1.html" class="btn btn-primary">Take the quiz</a>
+              <a
+                class="hero-linkedin"
+                href="https://www.linkedin.com/in/beattiera/"
+                target="_blank"
+                rel="noreferrer"
+                >Get in touch on LinkedIn</a
+              >
+            </p>
           </div>
+
+          <div class="hero-aside">
+            <div class="hero-stats-block">
+              <h2 class="stats-heading">What Richard actually does</h2>
+              <ul class="stats-list">
+                <li>Brings together product strategy, great user experience, and engineering excellence</li>
+                <li>Turns ambiguity into strategic clarity and meaningful impact</li>
+                <li>End-to-end product ownership and delivery</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section class="portfolio-carousel" aria-label="Featured portfolio projects">
+        <header class="portfolio-carousel-head">
+          <h2 class="stats-heading">Featured portfolio projects</h2>
+          <div class="portfolio-carousel-controls">
+            <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous project">Prev</button>
+            <button type="button" class="carousel-btn" data-carousel-next aria-label="Next project">Next</button>
+          </div>
+        </header>
+
+        <div class="portfolio-track" data-portfolio-track>
+          <article class="portfolio-card">
+            <img
+              class="portfolio-card-img-shift-up"
+              src="assets/design-system-hub.png"
+              alt="Design system transformation diagram showing before and after team alignment"
+              loading="lazy"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Design System Platform</h3>
+              <p>Director and Product Manager. Transformed into an AI-ready, inner-source code + design platform which reduced effort by over 60% on key projects.</p>
+              <a href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">View case study</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              class="portfolio-card-img-contain"
+              src="assets/offers-16x9.png"
+              alt="Secure Offers case study preview"
+              loading="lazy"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Secure Offers</h3>
+              <p>Built a personalized offers experience that drove 10x CTR and 3x sales rate.</p>
+              <a href="https://www.meetrb.com/secure-offers" target="_blank" rel="noopener noreferrer">View case study</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/experience-health-check-new-v2.png"
+              alt="Experience Health Checks case study preview"
+              loading="lazy"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Experience Health Checks</h3>
+              <p>Introduced a balanced scorecard and design sprint ceremony accross all digital teams, driving 40+ backlog items and increased target KPIs over 20% on key projects.</p>
+              <a href="https://www.meetrb.com/experience-health-check" target="_blank" rel="noopener noreferrer">View case study</a>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/pre-arrival-newcomers-new.png"
+              alt="Pre-arrival Newcomers case study preview"
+              loading="lazy"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Pre-arrival Newcomers</h3>
+              <p>Launched an award-winning journey enabling account setup before arriving in Canada.</p>
+              <a href="https://www.meetrb.com/pre-arrival-bank-account-application-for-newcomers" target="_blank" rel="noopener noreferrer">View case study</a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -67,5 +196,16 @@
         </p>
       </section>
     </main>
+    <script src="app.js" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+

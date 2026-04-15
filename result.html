@@ -7,19 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var key = "meetrb_ui_theme_v1";
+          var valid = { neo: 1, liquid: 1, win98: 1, modern: 1 };
+          var t = window.localStorage.getItem(key);
+          document.documentElement.dataset.uiTheme = valid[t] ? t : "modern";
+        } catch (e) {
+          document.documentElement.dataset.uiTheme = "modern";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="result">
     <header class="site-header">
       <div class="header-inner">
-        <div class="brand-lockup">
-          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
-          <span class="brand-tagline">Product &amp; UX Leadership</span>
+        <div class="header-actions">
+          <a href="index.html" class="header-cta">Back to Home</a>
+          <a href="cv.html" class="header-cta">View CV</a>
+          <a href="https://www.linkedin.com/in/beattiera/" class="header-cta" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="theme-dropdown" aria-label="UI theme selector">
+            <button
+              type="button"
+              class="theme-dropdown-trigger header-cta"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-controls="header-theme-menu"
+              id="header-theme-trigger"
+            >
+              <span class="theme-dropdown-label">Choose Theme</span>
+            </button>
+            <div
+              class="theme-dropdown-menu"
+              id="header-theme-menu"
+              role="menu"
+              aria-labelledby="header-theme-trigger"
+            >
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="neo" aria-pressed="false">
+                Neobrutalism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="liquid" aria-pressed="false">
+                Glassmorphism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="win98" aria-pressed="false">
+                Windows 98
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="modern" aria-pressed="false">
+                Modern
+              </button>
+            </div>
+          </div>
         </div>
-        <a href="index.html" class="header-cta">Restart the quiz</a>
       </div>
     </header>
 
@@ -44,23 +87,17 @@
             <a
               id="result-secondary-cta"
               class="btn btn-ghost btn-full"
-              href="https://meetrb.com"
+              href="https://www.linkedin.com/in/beattiera/"
               target="_blank"
               rel="noreferrer"
             >
-              Visit meetrb.com
+              Add Richard on LinkedIn
             </a>
+            <a id="result-cv-cta" class="btn btn-ghost btn-full" href="cv.html">View Richard&apos;s CV</a>
           </footer>
         </div>
       </section>
 
-      <section class="footnote">
-        <p>
-          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
-          experiences at speed and scale. If that sounds like you, the answer is almost certainly
-          <strong>yes</strong>.
-        </p>
-      </section>
     </main>
 
     <script src="app.js" defer></script>

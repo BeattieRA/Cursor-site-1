@@ -11,61 +11,586 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var key = "meetrb_ui_theme_v1";
+          var valid = { neo: 1, liquid: 1, win98: 1, modern: 1 };
+          var t = window.localStorage.getItem(key);
+          document.documentElement.dataset.uiTheme = valid[t] ? t : "modern";
+        } catch (e) {
+          document.documentElement.dataset.uiTheme = "modern";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <div class="brand-lockup">
-          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
-          <span class="brand-tagline">Product &amp; UX Leadership</span>
+        <div class="header-actions">
+          <a href="q1.html" class="header-cta">Start the quiz</a>
+          <a href="cv.html" class="header-cta">View CV</a>
+          <a href="https://www.linkedin.com/in/beattiera/" class="header-cta" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="theme-dropdown" aria-label="UI theme selector">
+            <button
+              type="button"
+              class="theme-dropdown-trigger header-cta"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-controls="header-theme-menu"
+              id="header-theme-trigger"
+            >
+              <span class="theme-dropdown-label">Choose Theme</span>
+            </button>
+            <div
+              class="theme-dropdown-menu"
+              id="header-theme-menu"
+              role="menu"
+              aria-labelledby="header-theme-trigger"
+            >
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="neo" aria-pressed="false">
+                Neobrutalism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="liquid" aria-pressed="false">
+                Glassmorphism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="win98" aria-pressed="false">
+                Windows 98
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="modern" aria-pressed="false">
+                Modern
+              </button>
+            </div>
+          </div>
         </div>
-        <a href="q1.html" class="header-cta">Start the quiz</a>
       </div>
     </header>
 
-    <main class="page">
-      <section class="hero" aria-labelledby="hero-heading">
-        <div class="hero-copy">
-          <h1 id="hero-heading">Should you hire Richard?</h1>
-          <p class="hero-subtitle">
-            A short (biased) questionnaire for teams like yours: fintechs,
-            start-ups, tech companies and banks dedicated to delivering great customer experiences at speed and scale.
-          </p>
-          <p class="hero-cta-row">
-            <a href="q1.html" class="btn btn-primary"> Let&apos;s find out </a>
-            <a
-              class="hero-linkedin"
-              href="https://www.linkedin.com/in/beattiera/"
-              target="_blank"
-              rel="noreferrer"
-              >Get in touch on LinkedIn</a
-            >
-          </p>
+    <main class="page" data-win98-shell>
+      <div class="liquid-page-bg-video" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="metadata">
+          <source src="assets/hero-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="win98-desktop-workspace">
+        <div class="win98-desktop-icons" aria-label="Desktop shortcuts">
+          <button type="button" class="win98-desktop-icon" data-win98-target="win98-frame-intro" aria-label="Open About me">
+            <img
+              class="win98-desktop-icon-visual win98-desktop-icon-visual--user"
+              src="assets/win98-desktop-icon.png"
+              width="40"
+              height="40"
+              alt=""
+              decoding="async"
+              aria-hidden="true"
+            />
+            <span class="win98-desktop-icon-label">About me</span>
+          </button>
+          <button type="button" class="win98-desktop-icon" data-win98-target="win98-frame-hero" aria-label="Open Workshops and consulting">
+            <img
+              class="win98-desktop-icon-visual win98-desktop-icon-visual--folder"
+              src="assets/win98-desktop-icon.png"
+              width="40"
+              height="40"
+              alt=""
+              decoding="async"
+              aria-hidden="true"
+            />
+            <span class="win98-desktop-icon-label">Workshops</span>
+          </button>
+          <button type="button" class="win98-desktop-icon" data-win98-target="win98-frame-quiz" aria-label="Open Hire Richard quiz window">
+            <img
+              class="win98-desktop-icon-visual win98-desktop-icon-visual--quiz"
+              src="assets/win98-desktop-icon.png"
+              width="40"
+              height="40"
+              alt=""
+              decoding="async"
+              aria-hidden="true"
+            />
+            <span class="win98-desktop-icon-label">Hire Richard?</span>
+          </button>
+          <button type="button" class="win98-desktop-icon" data-win98-target="win98-frame-portfolio" aria-label="Open Featured portfolio">
+            <img
+              class="win98-desktop-icon-visual win98-desktop-icon-visual--folder"
+              src="assets/win98-desktop-icon.png"
+              width="40"
+              height="40"
+              alt=""
+              decoding="async"
+              aria-hidden="true"
+            />
+            <span class="win98-desktop-icon-label">Portfolio</span>
+          </button>
+        </div>
+        <div class="win98-windows-layer">
+          <div
+            class="win98-frame"
+            id="win98-frame-intro"
+            data-win98-frame
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="win98-tb-intro-title"
+          >
+            <div class="win98-titlebar" data-win98-drag-handle>
+              <div class="win98-titlebar-leading">
+                <span class="win98-titlebar-icon win98-titlebar-icon--app" aria-hidden="true"></span>
+                <span id="win98-tb-intro-title" class="win98-titlebar-title">About me</span>
+              </div>
+              <div class="win98-titlebar-controls">
+                <button type="button" class="win98-titlebtn" data-win98-minimize aria-label="Minimize">
+                  <span aria-hidden="true">_</span>
+                </button>
+                <button type="button" class="win98-titlebtn" data-win98-maximize aria-label="Maximize">
+                  <span aria-hidden="true">□</span>
+                </button>
+                <button type="button" class="win98-titlebtn win98-titlebtn-close" data-win98-close aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+            <div class="win98-client">
+      <section class="intro-card" aria-label="Richard introduction">
+        <div class="intro-heading-shell">
+          <h2 class="intro-card-heading">
+            <span class="neo-intro-framed">
+              <span class="neo-role-rail neo-role-rail--top" data-neo-marquee-rail aria-hidden="true"></span>
+              <span class="neo-intro-framed-middle">
+                <span class="intro-card-greet-neo">
+                  <span class="intro-card-greet-neo-panel">
+                    <span class="intro-card-greet-line">Hi, I&apos;m</span>
+                    <span class="intro-card-name-neo">Richard.</span>
+                  </span>
+                </span>
+                <span class="intro-card-lead-neo">
+                  <span class="intro-card-lead-neo-panel">
+                    Welcome to my portfolio/vibe coding playground.
+                  </span>
+                </span>
+              </span>
+              <span class="neo-role-rail neo-role-rail--bottom" data-neo-marquee-rail aria-hidden="true"></span>
+            </span>
+            <span class="intro-card-heading-default-lead">
+              <span class="intro-card-greet-prefix">Hi, I&apos;m </span><span id="rotating-role" class="rotating-role">Richard</span>
+            </span>
+          </h2>
+        </div>
+        <div class="intro-flight-stage" aria-hidden="true">
+          <canvas id="intro-flight-canvas" width="1280" height="720"></canvas>
+        </div>
+        <p class="intro-card-body">
+          Welcome to my portfolio/vibe coding playground.
+        </p>
+        <div class="intro-modern-trio" aria-label="Background and contact">
+          <div class="intro-modern-trio-top">
+            <span class="intro-modern-trio-icon" aria-hidden="true"></span>
+            <p class="intro-modern-trio-eyebrow">Background</p>
+          </div>
+          <div class="intro-modern-trio-grid" role="list">
+            <article class="intro-modern-trio-col" role="listitem">
+              <h3 class="intro-modern-trio-heading">Who I am</h3>
+              <p class="intro-modern-trio-body">
+                I&apos;ve spent the last 10+ years in Toronto leading digital teams, turning complexity into clarity and delivering great user experiences.
+              </p>
+            </article>
+            <article class="intro-modern-trio-col" role="listitem">
+              <h3 class="intro-modern-trio-heading">What I&apos;m doing now</h3>
+              <p class="intro-modern-trio-body">
+                Completing my MBA at Oxford where I focus on the intersection of strategy, finance, and technology.
+              </p>
+            </article>
+            <article class="intro-modern-trio-col" role="listitem">
+              <h3 class="intro-modern-trio-heading">Where I&apos;m going next</h3>
+              <p class="intro-modern-trio-body">If you're building something cool in the fintech space, reach out.</p>
+            </article>
+          </div>
+        </div>
+
+        <p class="hero-cta-row hero-band-cta-row">
+          <a
+            href="https://www.linkedin.com/in/beattiera/"
+            class="btn btn-primary hero-band-cta"
+            target="_blank"
+            rel="noreferrer"
+            >Connect on LinkedIn</a
+          >
+        </p>
+      </section>
+            </div>
+          </div>
+
+          <div
+            class="win98-frame"
+            id="win98-frame-hero"
+            data-win98-frame
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="win98-tb-hero-title"
+          >
+            <div class="win98-titlebar" data-win98-drag-handle>
+              <div class="win98-titlebar-leading">
+                <span class="win98-titlebar-icon win98-titlebar-icon--app" aria-hidden="true"></span>
+                <span id="win98-tb-hero-title" class="win98-titlebar-title">Workshops &amp; Consulting</span>
+              </div>
+              <div class="win98-titlebar-controls">
+                <button type="button" class="win98-titlebtn" data-win98-minimize aria-label="Minimize">
+                  <span aria-hidden="true">_</span>
+                </button>
+                <button type="button" class="win98-titlebtn" data-win98-maximize aria-label="Maximize">
+                  <span aria-hidden="true">□</span>
+                </button>
+                <button type="button" class="win98-titlebtn win98-titlebtn-close" data-win98-close aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+            <div class="win98-client">
+      <section class="hero-video-stage hero-video-stage--workshops" aria-label="Workshops and consulting">
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+          <source src="assets/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        <section class="hero hero--workshops" aria-labelledby="workshops-heading">
+          <div class="hero-copy">
+            <h2 id="workshops-heading" class="hero-title-workshops">Workshops &amp; Consulting</h2>
+            <p class="hero-subtitle">
+              I'm a design/systems thinker at heart with a passion for unlocking innovation, alignment and action. If you're part of a startup or growing team, let's chat.
+            </p>
+            <p class="hero-cta-row">
+              <a
+                href="https://www.linkedin.com/in/beattiera/"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noreferrer"
+                >Connect on LinkedIn</a
+              >
+            </p>
         </div>
 
         <div class="hero-aside">
           <div class="hero-stats-block">
-            <h2 class="stats-heading">What Richard actually does</h2>
+              <h2 class="stats-heading">What I can help with:</h2>
             <ul class="stats-list">
-              <li>10 years in digital leadership and delivery</li>
-              <li>Bridges product strategy, great user experience, and engineering excellence</li>
-              <li>Turns ambiguity into strategic clarity and meaningful impact</li>
+                <li>Customer-centric innovation</li>
+                <li>Design thinking workshops</li>
+                <li>Team vision, strategy &amp; roadmap planning</li>
             </ul>
+            </div>
           </div>
+
+        </section>
+      </section>
+            </div>
+          </div>
+
+          <div
+            class="win98-frame"
+            id="win98-frame-portfolio"
+            data-win98-frame
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="win98-tb-portfolio-title"
+          >
+            <div class="win98-titlebar" data-win98-drag-handle>
+              <div class="win98-titlebar-leading">
+                <span class="win98-titlebar-icon win98-titlebar-icon--app" aria-hidden="true"></span>
+                <span id="win98-tb-portfolio-title" class="win98-titlebar-title">Featured portfolio</span>
+              </div>
+              <div class="win98-titlebar-controls">
+                <button type="button" class="win98-titlebtn" data-win98-minimize aria-label="Minimize">
+                  <span aria-hidden="true">_</span>
+                </button>
+                <button type="button" class="win98-titlebtn" data-win98-maximize aria-label="Maximize">
+                  <span aria-hidden="true">□</span>
+                </button>
+                <button type="button" class="win98-titlebtn win98-titlebtn-close" data-win98-close aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+            <div class="win98-client">
+      <section class="portfolio-carousel" aria-label="Featured portfolio projects">
+        <header class="portfolio-carousel-head">
+          <h2 class="stats-heading">Featured portfolio projects</h2>
+          <div class="portfolio-carousel-controls">
+            <button type="button" class="carousel-btn" data-carousel-prev aria-label="Previous project">Prev</button>
+            <button type="button" class="carousel-btn" data-carousel-next aria-label="Next project">Next</button>
+          </div>
+        </header>
+
+        <div class="portfolio-track" data-portfolio-track>
+          <article class="portfolio-card">
+            <img
+              class="portfolio-card-img-shift-up"
+              src="assets/design-system-hub.png"
+              alt="Design system transformation diagram showing before and after team alignment"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Design System Platform</h3>
+              <p>Director and Product Manager. Transformed into an AI-ready, inner-source code + design platform which reduced effort by over 60% on key projects.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              class="portfolio-card-img-contain"
+              src="assets/offers-16x9.png"
+              alt="Secure Offers case study preview"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Secure Offers</h3>
+              <p>Built a personalized offers experience that drove 10x CTR and 3x sales rate.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/experience-health-check-new-v2.png"
+              alt="Experience Health Checks case study preview"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Experience Health Checks</h3>
+              <p>Introduced a balanced scorecard and design sprint ceremony across all digital teams, driving 40+ backlog items and increased target KPIs over 20% on key projects.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/pre-arrival-newcomers-new.png"
+              alt="Pre-arrival Newcomers case study preview"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Pre-arrival Newcomers</h3>
+              <p>Launched an award-winning journey enabling account setup for newcomers before arriving in Canada.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/personalization-ab-testing.png"
+              alt="Illustration of sales funnel, A/B testing, heatmaps, and revenue growth"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Personalization &amp; A/B Testing</h3>
+              <p>
+                As Product Owner for Personalization and A/B Testing, I Optimized digital sales funnels by
+                leveraging user data to develop a test and target strategy, led cross-functional delivery
+                and exceeded revenue target by 30% (~$1.5MM).
+              </p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <img
+              src="assets/continental-currency-onecard.png"
+              alt="Hand holding a blue One Card alongside Mexican currency, selective colour treatment"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="900"
+            />
+            <div class="portfolio-card-copy">
+              <h3>Continental Currency</h3>
+              <p>
+                Working in a start-up environment, I grew digital&apos;s sales contribution from 0 to 20%, including
+                online currency ordering and one-card multi-currency card.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
+            </div>
+          </div>
 
-      <section class="footnote">
-        <p>
-          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
-          experiences at speed and scale. If that sounds like you, the answer is almost certainly
-          <strong>yes</strong>.
-        </p>
+          <div
+            class="win98-frame"
+            id="win98-frame-cv"
+            data-win98-frame
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="win98-tb-cv-title"
+          >
+            <div class="win98-titlebar" data-win98-drag-handle>
+              <div class="win98-titlebar-leading">
+                <span class="win98-titlebar-icon win98-titlebar-icon--app" aria-hidden="true"></span>
+                <span id="win98-tb-cv-title" class="win98-titlebar-title">Richard Beattie · CV</span>
+              </div>
+              <div class="win98-titlebar-controls">
+                <button type="button" class="win98-titlebtn" data-win98-minimize aria-label="Minimize">
+                  <span aria-hidden="true">_</span>
+                </button>
+                <button type="button" class="win98-titlebtn" data-win98-maximize aria-label="Maximize">
+                  <span aria-hidden="true">□</span>
+                </button>
+                <button type="button" class="win98-titlebtn win98-titlebtn-close" data-win98-close aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+            <div class="win98-client win98-client--cv">
+              <iframe
+                class="win98-cv-iframe"
+                data-win98-cv-src="cv.html"
+                title="Richard Beattie curriculum vitae"
+              ></iframe>
+            </div>
+          </div>
+
+          <div
+            class="win98-frame"
+            id="win98-frame-quiz"
+            data-win98-frame
+            role="dialog"
+            aria-modal="false"
+            aria-labelledby="win98-tb-quiz-title"
+          >
+            <div class="win98-titlebar" data-win98-drag-handle>
+              <div class="win98-titlebar-leading">
+                <span class="win98-titlebar-icon win98-titlebar-icon--app" aria-hidden="true"></span>
+                <span id="win98-tb-quiz-title" class="win98-titlebar-title">Hire Richard?</span>
+              </div>
+              <div class="win98-titlebar-controls">
+                <button type="button" class="win98-titlebtn" data-win98-minimize aria-label="Minimize">
+                  <span aria-hidden="true">_</span>
+                </button>
+                <button type="button" class="win98-titlebtn" data-win98-maximize aria-label="Maximize">
+                  <span aria-hidden="true">□</span>
+                </button>
+                <button type="button" class="win98-titlebtn win98-titlebtn-close" data-win98-close aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+            <div class="win98-client">
+      <section class="hero-video-stage hero-video-stage--no-video" aria-label="Hire Richard quiz introduction">
+        <section class="hero hero--quiz-as-intro" aria-labelledby="hero-heading">
+          <p class="intro-card-body" id="hero-heading" role="heading" aria-level="1">
+            Should you hire Richard? Take a (biased) quiz to find out.
+          </p>
+          <div class="intro-modern-trio" aria-label="Quiz overview">
+            <div class="intro-modern-trio-top">
+              <span class="intro-modern-trio-icon" aria-hidden="true"></span>
+              <p class="intro-modern-trio-eyebrow">The quiz</p>
+            </div>
+            <div class="intro-modern-trio-grid" role="list">
+              <article class="intro-modern-trio-col" role="listitem">
+                <h3 class="intro-modern-trio-heading">Who it&apos;s for</h3>
+                <p class="intro-modern-trio-body">
+                  A short (biased) quiz for teams like yours: fintechs, start-ups, tech companies and banks
+                  dedicated to delivering great customer experiences at speed and scale. If that sounds like you, the answer is almost certainly <strong>yes</strong>
+                </p>
+              </article>
+              <article class="intro-modern-trio-col" role="listitem">
+                <h3 class="intro-modern-trio-heading">What Richard actually does</h3>
+                <p class="intro-modern-trio-body">
+                  A product manager, design thinker and digital leader obsessed with shipping great customer
+                  experiences at speed and scale.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <p class="hero-cta-row hero-band-cta-row">
+            <a href="q1.html" class="btn btn-primary hero-band-cta">Take the quiz</a>
+          </p>
+
+        </section>
       </section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="win98-taskbar" aria-label="Windows 98 taskbar">
+        <button type="button" class="win98-start-btn" id="win98-start-btn" aria-expanded="false" aria-controls="win98-start-menu">
+          <img
+            class="win98-start-flag"
+            src="assets/win98-start-flag.png"
+            width="18"
+            height="16"
+            alt=""
+            decoding="async"
+            aria-hidden="true"
+          />
+          Start
+        </button>
+        <div class="win98-start-menu" id="win98-start-menu" role="menu" hidden>
+          <div class="win98-start-menu-side" aria-hidden="true"><span class="win98-start-menu-side-text">Windows 98</span></div>
+          <div class="win98-start-menu-main">
+            <button type="button" class="win98-start-item" role="menuitem" data-win98-target="win98-frame-quiz">
+              Start the quiz
+            </button>
+            <button type="button" class="win98-start-item" role="menuitem" data-win98-target="win98-frame-cv">
+              View CV
+            </button>
+            <a href="https://www.linkedin.com/in/beattiera/" class="win98-start-item" role="menuitem" target="_blank" rel="noreferrer">LinkedIn</a>
+            <div class="win98-start-sep" role="separator"></div>
+            <div class="win98-start-submenu-wrap">
+              <button type="button" class="win98-start-item win98-start-submenu-trigger" aria-expanded="false" aria-controls="win98-theme-submenu" id="win98-theme-submenu-btn">
+                Display themes
+              </button>
+              <div class="win98-start-submenu" id="win98-theme-submenu" role="menu" hidden>
+                <button type="button" class="win98-start-item" role="menuitem" data-theme-option="neo">Neobrutalism</button>
+                <button type="button" class="win98-start-item" role="menuitem" data-theme-option="liquid">Glassmorphism</button>
+                <button type="button" class="win98-start-item" role="menuitem" data-theme-option="win98">Windows 98</button>
+                <button type="button" class="win98-start-item" role="menuitem" data-theme-option="modern">Modern</button>
+              </div>
+            </div>
+            <div class="win98-start-sep" role="separator"></div>
+            <button type="button" class="win98-start-item" role="menuitem" data-win98-shutdown>Exit desktop view</button>
+          </div>
+        </div>
+        <div class="win98-taskbar-tasks" data-win98-taskbar-tasks aria-label="Open windows"></div>
+        <div class="win98-tray">
+          <span class="win98-tray-clock" data-win98-clock aria-live="polite"></span>
+        </div>
+      </nav>
     </main>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      style="position: absolute; overflow: hidden"
+      aria-hidden="true"
+      color-interpolation-filters="sRGB"
+    >
+      <defs id="hero-archis-defs"></defs>
+    </svg>
+    <script src="toronto-london-flight.js" defer></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+

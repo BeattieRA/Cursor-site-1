@@ -7,19 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var key = "meetrb_ui_theme_v1";
+          var valid = { neo: 1, liquid: 1, win98: 1, modern: 1 };
+          var t = window.localStorage.getItem(key);
+          document.documentElement.dataset.uiTheme = valid[t] ? t : "modern";
+        } catch (e) {
+          document.documentElement.dataset.uiTheme = "modern";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="experience" data-question-index="1" data-question-total="5" data-next="q2.html" data-prev="index.html">
     <header class="site-header">
       <div class="header-inner">
-        <div class="brand-lockup">
-          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
-          <span class="brand-tagline">Product &amp; UX Leadership</span>
+        <div class="header-actions">
+          <a href="index.html" class="header-cta">Back to Home</a>
+          <a href="cv.html" class="header-cta">View CV</a>
+          <a href="https://www.linkedin.com/in/beattiera/" class="header-cta" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="theme-dropdown" aria-label="UI theme selector">
+            <button
+              type="button"
+              class="theme-dropdown-trigger header-cta"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-controls="header-theme-menu"
+              id="header-theme-trigger"
+            >
+              <span class="theme-dropdown-label">Choose Theme</span>
+            </button>
+            <div
+              class="theme-dropdown-menu"
+              id="header-theme-menu"
+              role="menu"
+              aria-labelledby="header-theme-trigger"
+            >
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="neo" aria-pressed="false">
+                Neobrutalism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="liquid" aria-pressed="false">
+                Glassmorphism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="win98" aria-pressed="false">
+                Windows 98
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="modern" aria-pressed="false">
+                Modern
+              </button>
+            </div>
+          </div>
         </div>
-        <a href="index.html" class="header-cta">Back to overview</a>
       </div>
     </header>
 
@@ -29,7 +72,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 1 of 5</p>
             <h1 id="quiz-question">
-              Are you looking for someone with 10 years' experience in product and UX leadership?
+              Are you looking for someone with 10+ years of experience in product and UX leadership?
             </h1>
           </header>
 
@@ -44,8 +87,7 @@
                   <div>
                     <div class="quiz-option-label">Yes, we need that depth.</div>
                     <div class="quiz-option-help">
-                      You want someone who has shipped through regulation, growth spurts, and a few
-                      platform pivots—not just owned a backlog.
+                      You want someone who has experience leading teams, managing managers, and working across multiple products.
                     </div>
                   </div>
                 </label>
@@ -77,30 +119,26 @@
           <footer class="quiz-footer">
             <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">Next</button>
+            <button id="btn-next" class="btn btn-ghost" type="button">Next</button>
           </footer>
 
-          <section class="fun-fact" aria-labelledby="fun-fact-heading-q1">
-            <h2 id="fun-fact-heading-q1" class="fun-fact-heading">Fun Richard Fact</h2>
-            <p class="fun-fact-body">
-              Ten years ago, Richard cut his teeth at a scrappy currency-exchange company (with a start-up attitude) doing all
-              things digital: digital marketing, social media, SEO, reporting analytics, front-end coding, and even launched what they called
-              &quot;Netflix for currency&quot; (online currency ordering) and an all-in-one currency card. He grew digital sales
-              from 0 to 20% of revenue.
-            </p>
-          </section>
         </div>
       </section>
 
-      <section class="footnote">
-        <p>
-          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
-          experiences at speed and scale. If that sounds like you, the answer is almost certainly
-          <strong>yes</strong>.
-        </p>
-      </section>
     </main>
 
     <script src="app.js" defer></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

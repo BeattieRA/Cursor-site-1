@@ -7,19 +7,62 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Montserrat:wght@400;500;600;700;800&family=Sora:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        try {
+          var key = "meetrb_ui_theme_v1";
+          var valid = { neo: 1, liquid: 1, win98: 1, modern: 1 };
+          var t = window.localStorage.getItem(key);
+          document.documentElement.dataset.uiTheme = valid[t] ? t : "modern";
+        } catch (e) {
+          document.documentElement.dataset.uiTheme = "modern";
+        }
+      })();
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body data-page="question" data-question-id="outcomes" data-question-index="3" data-question-total="5" data-next="q4.html" data-prev="q2.html">
     <header class="site-header">
       <div class="header-inner">
-        <div class="brand-lockup">
-          <a class="brand-pill" href="https://www.meetrb.com" target="_blank" rel="noopener noreferrer">meetrb</a>
-          <span class="brand-tagline">Product &amp; UX Leadership</span>
+        <div class="header-actions">
+          <a href="index.html" class="header-cta">Back to Home</a>
+          <a href="cv.html" class="header-cta">View CV</a>
+          <a href="https://www.linkedin.com/in/beattiera/" class="header-cta" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="theme-dropdown" aria-label="UI theme selector">
+            <button
+              type="button"
+              class="theme-dropdown-trigger header-cta"
+              aria-expanded="false"
+              aria-haspopup="menu"
+              aria-controls="header-theme-menu"
+              id="header-theme-trigger"
+            >
+              <span class="theme-dropdown-label">Choose Theme</span>
+            </button>
+            <div
+              class="theme-dropdown-menu"
+              id="header-theme-menu"
+              role="menu"
+              aria-labelledby="header-theme-trigger"
+            >
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="neo" aria-pressed="false">
+                Neobrutalism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="liquid" aria-pressed="false">
+                Glassmorphism
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="win98" aria-pressed="false">
+                Windows 98
+              </button>
+              <button type="button" class="theme-dropdown-item" role="menuitem" data-theme-option="modern" aria-pressed="false">
+                Modern
+              </button>
+            </div>
+          </div>
         </div>
-        <a href="index.html" class="header-cta">Back to overview</a>
       </div>
     </header>
 
@@ -29,7 +72,7 @@
           <header class="quiz-header">
             <p class="quiz-eyebrow" id="quiz-progress">Question 3 of 5</p>
             <h1 id="quiz-question">
-              Do you need someone who takes end-to-end ownership of product outcomes in a high-growth environment where velocity, trust and user experience are all critical?
+              Do you need someone who can own outcomes end-to-end, from strategy through design and delivery?
             </h1>
           </header>
 
@@ -42,19 +85,19 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="yes" />
                   <div>
-                    <div class="quiz-option-label">Yes, we need true end-to-end ownership.</div>
+                    <div class="quiz-option-label">Yes, we need end-to-end ownership.</div>
                     <div class="quiz-option-help">
-                      From understanding the user needs to shipping products to measuring impact.
+                      You want someone who can align strategy, execution, and customer outcomes across teams.
                     </div>
                   </div>
                 </label>
 
                 <label class="quiz-option">
-                  <input type="radio" name="answer" value="maybe" />
+                  <input type="radio" name="answer" value="some" />
                   <div>
-                    <div class="quiz-option-label">Partly, we want stronger ownership, but we're still maturing.</div>
+                    <div class="quiz-option-label">Some ownership, especially on high-impact initiatives.</div>
                     <div class="quiz-option-help">
-                      You&apos;re moving from project mode toward true product ownership.
+                      You need focused leadership where complexity and cross-functional coordination are highest.
                     </div>
                   </div>
                 </label>
@@ -62,9 +105,9 @@
                 <label class="quiz-option">
                   <input type="radio" name="answer" value="no" />
                   <div>
-                    <div class="quiz-option-label">Not really, we need someone who can just execute.</div>
+                    <div class="quiz-option-label">Not really, we separate strategy and delivery roles.</div>
                     <div class="quiz-option-help">
-                      Richard will add the most value when ownership and accountability are part of the role.
+                      That can work, but you may miss speed and accountability across the full product lifecycle.
                     </div>
                   </div>
                 </label>
@@ -75,27 +118,11 @@
           <footer class="quiz-footer">
             <button id="btn-prev" class="btn btn-ghost" type="button">Back</button>
             <div class="quiz-footer-spacer"></div>
-            <button id="btn-next" class="btn btn-primary" type="button">Next</button>
+            <button id="btn-next" class="btn btn-ghost" type="button">Next</button>
           </footer>
-
-          <section class="fun-fact" aria-labelledby="fun-fact-heading-q3">
-            <h2 id="fun-fact-heading-q3" class="fun-fact-heading">Fun Richard Fact</h2>
-            <p class="fun-fact-body">
-              As Director in Digital Transformation at BMO, Richard led the design system platform,
-              building an &apos;inner-source&apos;, AI-ready, design and code repo leveraged by teams
-              across the bank. The design system reduced the amount of time spent on design and development by over 60%, enabling us to deliver great user experiences at speed and scale.
-            </p>
-          </section>
         </div>
       </section>
 
-      <section class="footnote">
-        <p>
-          This quiz is biased. It&apos;s for teams like yours dedicated to delivering great user
-          experiences at speed and scale. If that sounds like you, the answer is almost certainly
-          <strong>yes</strong>.
-        </p>
-      </section>
     </main>
 
     <script src="app.js" defer></script>

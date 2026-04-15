@@ -1,0 +1,5 @@
+# Replace https://www.example.com with your canonical production URL (https, no trailing slash on domain).
+User-agent: *
+Allow: /
+
+Sitemap: https://www.example.com/sitemap.xml

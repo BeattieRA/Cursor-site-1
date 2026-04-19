@@ -9,7 +9,6 @@ const ROTATING_ROLES = [
   "a design thinker",
   "a problem solver",
   "a product manager",
-  "your next hire",
 ];
 
 /** Inline SVGs for neo intro marquee (phrase → icon → phrase …). */
